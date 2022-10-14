@@ -1,8 +1,6 @@
 # Vue Satori
 
-## What is this?
-
-This module is a component rendering for vue [satori](https://github.com/vercel/satori) and (satori-html)[https://github.com/natemoo-re/satori-html]
+This module is a component rendering for vue [satori](https://github.com/vercel/satori) and [satori-html](https://github.com/natemoo-re/satori-html)
 
 > **Note**
 > This wrapper extends from [satori](https://github.com/vercel/satori), so you will pass the same settings
