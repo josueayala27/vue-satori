@@ -1,15 +1,25 @@
 {
   "name": "vue-satori",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "main": "dist/vue-satori.common.js",
+  "unpkg": "dist/vue-satori.common.js",
+  "jsdelivr": "dist/vue-satori.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build": "vue-cli-service build --target lib --name vue-satori src/entry.js",
+    "pub": "npx build && npx publish"
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "html-to-text": "^8.2.1",
+    "satori": "^0.0.40",
+    "satori-html": "^0.1.0",
     "vue": "^2.6.14"
   },
   "devDependencies": {
@@ -24,11 +34,14 @@
     "@vue/vue2-jest": "^27.0.0-alpha.2",
     "babel-jest": "^27.0.6",
     "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^8.0.3",
     "eslint-plugin-vuejs-accessibility": "^1.1.0",
     "jest": "^27.0.5",
     "lint-staged": "^11.1.2",
+    "prettier": "^2.7.1",
     "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {
@@ -38,12 +51,18 @@
     },
     "extends": [
       "plugin:vue/essential",
-      "@vue/airbnb"
+      "@vue/airbnb",
+      "prettier"
     ],
     "parserOptions": {
       "parser": "@babel/eslint-parser"
     },
-    "rules": {},
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error"
+    },
     "overrides": [
       {
         "files": [

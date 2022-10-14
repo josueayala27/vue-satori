@@ -1,28 +1,37 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div style="align-items: center">
+    <VueSatori :config="configuration" :html="htmlContent" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import VueSatori from "@/components/VueSatori.vue";
 
 export default {
-  name: 'App',
+  name: "AppLayout",
   components: {
-    HelloWorld,
+    VueSatori,
+  },
+  data() {
+    return {
+      htmlContent: `
+        <div style="width: 100%; height: 100%; justify-content: center; align-items: center; display: flex; background: red; color: white">
+          Hello world!
+        </div>
+      `,
+      configuration: {
+        width: 600,
+        height: 400,
+        fonts: [
+          {
+            name: "Inter",
+            url: "http://localhost:8080/Inter-Regular.ttf",
+            weight: 400,
+            style: "normal",
+          },
+        ],
+      },
+    };
   },
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
