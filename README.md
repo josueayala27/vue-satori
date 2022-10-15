@@ -11,7 +11,7 @@ This module is a component rendering for vue [satori](https://github.com/vercel/
 
 ```vue
 <script>
-import { VueSatori } from "@/components/VueSatori.vue";
+import { VueSatori } from "vue-satori";
 
 export default {
   components: {
